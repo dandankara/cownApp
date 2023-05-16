@@ -1,14 +1,16 @@
+import { useNavigation } from '@react-navigation/native'
 import { StatusBar } from 'expo-status-bar'
-import { Button, StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
+import { Title } from './style'
 
-export default function About({navigation}) {
+export default function Home() {
+
   return (
     <SafeAreaProvider>
       <View style={styles.container}>
         <StatusBar style="dark" />
-        <Text>SOBRE</Text>
-        <Button title='Voltar' onPress={() => navigation.goBack()}>Voltar</Button>
+        <Title>página de home</Title>
       </View>
     </SafeAreaProvider>
   )
