@@ -5,27 +5,23 @@ import {
   useFonts,
   Poppins_400Regular,
   Poppins_500Medium,
-  Poppins_700Bold
+  Poppins_700Bold,
 } from '@expo-google-fonts/poppins'
 
-
-import { ThemeProvider } from 'styled-components'
-import theme from './src/global/sytles/theme'
-
-
 export default function App() {
-
   const [fontsLoaded] = useFonts({
     Poppins_400Regular,
     Poppins_500Medium,
     Poppins_700Bold,
   })
 
+  if(!fontsLoaded) {
+    return null
+  }
+
   return (
     <SafeAreaProvider>
-      <ThemeProvider theme={theme}>
-        <Routes />
-      </ThemeProvider>
+      <Routes />
     </SafeAreaProvider>
   )
 }
