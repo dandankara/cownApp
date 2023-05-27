@@ -1,0 +1,3 @@
+export const diferencial = 'Nosso diferencial em relação a outras empresas de turismo é a combinação perfeita entre expertise local e atendimento personalizado. Conhecemos cada detalhe do Rio de Janeiro e adaptamos nossos serviços às necessidades e preferências de cada cliente. Além disso, oferecemos roteiros exclusivos e experiências autênticas, tornando cada viagem única e memorável.'
+
+export const quemSomos = 'Nós somos uma empresa de turismo sediada no Rio de Janeiro, dedicada a proporcionar experiências únicas e inesquecíveis aos nossos clientes. Com uma equipe apaixonada e conhecedora da cidade maravilhosa, oferecemos roteiros personalizados, passeios emocionantes e um atendimento excepcional. Descubra o Rio de Janeiro conosco e viva momentos memoráveis.'
