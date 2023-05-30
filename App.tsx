@@ -21,7 +21,7 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-        <Routes />
+      <Routes />
     </SafeAreaProvider>
   )
 }

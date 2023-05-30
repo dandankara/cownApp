@@ -5,10 +5,13 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 
 import resGuides from '../../services/api'
 import { CardGuideInfo, ContainerCardGuide, ContainerGuides } from './style'
+import { useNavigation } from '@react-navigation/native'
+import GuideCard from '../../components/GuideCard'
 
 export default function Guides() {
 
-  const [guides, setGuides] = useState([]);
+  const [guides, setGuides] = useState([])
+  const navigation = useNavigation()
 
   useEffect(() => {
     async function loadGuides() {
@@ -22,17 +25,6 @@ export default function Guides() {
     loadGuides()
   }, [])
 
-  // const renderGuides = () => (
-  //   <Card key={card.id}>
-  //     <CardTitle>{card.title}</CardTitle>
-  //     <CardDescription>{card.description}</CardDescription>
-  //     <SearchButton>
-  //       <SearchButtonText>Procurar Guias</SearchButtonText>
-  //     </SearchButton>
-  //   </Card>
-  // );
-
-
   return (
     <SafeAreaView>
       <StatusBar style="dark" />
@@ -40,12 +32,11 @@ export default function Guides() {
       <ContainerGuides>
         <ContainerCardGuide>
           {guides.map((guide, index) => (
-            <>
-              <CardGuideInfo>
-                <Text key={index}>{guide.nome}</Text>
-                <Text key={index}>{guide.categorias[0]}</Text>
-              </CardGuideInfo>
-            </>
+            <GuideCard
+              key={index}
+              guide={guide}
+              onPress={() => navigation.navigate('GuideDetails', {guide})}
+            />
           ))}
         </ContainerCardGuide>
       </ContainerGuides>
