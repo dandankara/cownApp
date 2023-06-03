@@ -1,4 +1,4 @@
-import { SafeAreaProvider } from 'react-native-safe-area-context'
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 import Routes from './src/router'
 
 import {
