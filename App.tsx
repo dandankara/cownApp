@@ -1,5 +1,9 @@
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
-import Routes from './src/router'
+import Routes from './src/routes/router'
+
+import firebase from './src/firebase/firebaseConnection'
+
+import { NavigationContainer } from '@react-navigation/native'
 
 import {
   useFonts,
@@ -7,6 +11,7 @@ import {
   Poppins_500Medium,
   Poppins_700Bold,
 } from '@expo-google-fonts/poppins'
+import AuthProvider from './src/context/auth'
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -21,7 +26,11 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <Routes />
+      <NavigationContainer>
+        <AuthProvider>
+          <Routes />
+        </AuthProvider>
+      </NavigationContainer>
     </SafeAreaProvider>
   )
 }
