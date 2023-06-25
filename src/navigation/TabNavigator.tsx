@@ -13,8 +13,7 @@ const Stack  = createNativeStackNavigator()
 
 const GuideStackDetails = () => {
   return (
-    <Stack.Navigator screenOptions={{
-    }}>
+    <Stack.Navigator>
       <Stack.Screen options={{headerShown:false}} name='Guides' component={Guides} />
       <Stack.Screen name='GuideDetails' component={GuideDetails} />
     </Stack.Navigator>
